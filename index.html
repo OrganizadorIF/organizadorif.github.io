@@ -1,1 +1,84 @@
-<h1>TESTE</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <title>IFisica</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+
+.collapsible {
+  background-color: #cce6ff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.collapsible:hover {
+  background-color: #99ceff;
+}
+
+.collapsible::before {
+  content: "\02795";
+  font-size: 13px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.active::before {
+  content: "\02796";
+}
+
+.content {
+  padding-left: 20px;
+  display: none;
+}
+
+/* Estilização dos níveis */
+.level-2 {
+  padding-left: 40px;
+}
+
+.level-3 {
+  padding-left: 60px;
+}
+  
+</style>
+<body>
+  
+  <div class="container mt-5">
+    <h2 style = "text-align: center;" class="mb-4">Escolha um curso:</h2>
+    <button class="collapsible">Ciência da Computação</button>
+      <div class="content" style = "margin-left: 50px;">
+        <a href="https://organizadorif.github.io/COMP4/"><p>TESTE</p></a>
+      </div>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
